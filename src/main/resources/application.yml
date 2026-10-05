@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: wallet-ledger
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/wallet}
+    username: ${DB_USER:wallet}
+    password: ${DB_PASSWORD:wallet}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

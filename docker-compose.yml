@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: wallet
+      MYSQL_USER: wallet
+      MYSQL_PASSWORD: wallet
+      MYSQL_ROOT_PASSWORD: root
+    ports: ["3306:3306"]
+  kafka:
+    image: apache/kafka:3.9.0
+    ports: ["9092:9092"]
